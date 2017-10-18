@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { CSSTransitionGroup } from 'react-transition-group'
 
 class LandingPage extends Component {
   constructor(props) {
