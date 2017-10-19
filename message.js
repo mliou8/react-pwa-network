@@ -1,7 +1,3 @@
-import React, { Component, PropTypes } from 'react'
-import Message from 'components/Message/Message.js'
-import { CSSTransitionGroup } from 'react-transition-group'
-
 const messageArr = [
   { msg: 'Hey there, I\'m Michael!' },
   { msg: 'I built a tool that helped people who have similar goals and interests connect' },
@@ -24,25 +20,3 @@ const messageArrTwo = [
     }
   }
 ]
-
-class LandingPage extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <div>
-        <Message
-          messageContent={messageArr[0].msg}
-        />
-      </div>
-    )
-  }
-}
-
-LandingPage.propTypes = {
-
-}
-
-export default LandingPage
