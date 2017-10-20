@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import Message from 'components/Message/Message.js'
-import { CSSTransitionGroup } from 'react-transition-group'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
-const messageArr = [
+const messageArrOne = [
   { msg: 'Hey there, I\'m Michael!' },
   { msg: 'I built a tool that helped people who have similar goals and interests connect' },
   { msg: 'nothing more nothing less!' },
@@ -25,17 +25,38 @@ const messageArrTwo = [
   }
 ]
 
+const SlideIn = ({ children, ...props }) => (
+  <CSSTransition
+    {...props}
+    timeout={1000}
+    classNames="slide"
+  >
+    {children}
+  </CSSTransition>
+);
+
+
 class LandingPage extends Component {
   constructor(props) {
     super(props)
+    this.renderMessage = this.renderMessage.bind(this);
+    this.state = { activeMessage: messageArrOne}
+  }
+
+  renderMessage(messageArr) {
+    return messageArr.map((message) => {
+      return (
+        <Message
+          messageContent={message.msg}
+        />
+      )
+    })
   }
 
   render() {
     return (
       <div>
-        <Message
-          messageContent={messageArr[0].msg}
-        />
+        {this.renderMessage(this.state.activeMessage)}
       </div>
     )
   }
