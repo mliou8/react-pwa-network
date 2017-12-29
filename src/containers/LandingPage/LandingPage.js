@@ -3,9 +3,8 @@ import Message from 'components/Message/Message.js'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 const messageArrOne = [
-  { msg: 'Hey there, I\'m Michael!' },
-  { msg: 'I built a tool that helped people who have similar goals and interests connect' },
-  { msg: 'nothing more nothing less!' },
+  { msg: 'Higher Quality Connections.' },
+  { msg: 'Find the people who are in your network who you\'re suppoosed to meet.' },
   {
     decision: {
       one: 'so this is just Linkedin?',
@@ -15,6 +14,17 @@ const messageArrOne = [
 ]
 
 const messageArrTwo = [
+  { msg: 'Not quite! But you could think of it as' },
+  { msg: 'a wrapper around Linkedin to help you find interesting people.' },
+  {
+    decision: {
+      one: 'I\'ll check it out next time.',
+      two: 'Sounds fun! let\'s do it'
+    }
+  }
+]
+
+const messageArrThree = [
   { msg: 'Not quite! But you could think of it as' },
   { msg: 'a wrapper around Linkedin to help you find interesting people.' },
   {
@@ -60,10 +70,6 @@ class LandingPage extends Component {
       </div>
     )
   }
-}
-
-LandingPage.propTypes = {
-
 }
 
 export default LandingPage
